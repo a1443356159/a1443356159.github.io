@@ -4,19 +4,22 @@
   <meta charset="utf-8">
   
   
-  <title>训练记录02：The 2024 ICPC Asia Hangzhou Regional Contest | ACM训练日志</title>
+  <title>高维前缀和 | ACM训练日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="训练记录02：The 2024 ICPC Asia Hangzhou Regional Contest">
+  <meta name="description" content="求这样一个算式 g[S]&#x3D;∑T⊆Sf[T]g[S]&#x3D;\sum_{T\subseteq S} f[T] g[S]&#x3D;T⊆S∑​f[T] 首先我们来看二维度前缀和，可以写成这样： 1234567for(int i&#x3D;1;i&lt;&#x3D;n;++i)    for(int j&#x3D;1;j&lt;&#x3D;n;++j)        	sum[i][j]+&#x3D;sum[i][j-1];&#x2F;&#x2F;每一行先分别求个前缀和for(int j">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高维前缀和">
 <meta property="og:url" content="http://example.com/2025/04/20/%E9%AB%98%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/index.html">
 <meta property="og:site_name" content="ACM训练日志">
+<meta property="og:description" content="求这样一个算式 g[S]&#x3D;∑T⊆Sf[T]g[S]&#x3D;\sum_{T\subseteq S} f[T] g[S]&#x3D;T⊆S∑​f[T] 首先我们来看二维度前缀和，可以写成这样： 1234567for(int i&#x3D;1;i&lt;&#x3D;n;++i)    for(int j&#x3D;1;j&lt;&#x3D;n;++j)        	sum[i][j]+&#x3D;sum[i][j-1];&#x2F;&#x2F;每一行先分别求个前缀和for(int j">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-04-20T08:00:00.000Z">
-<meta property="article:modified_time" content="2025-04-20T13:09:52.436Z">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/h4ocw3d2.png">
+<meta property="article:published_time" content="2025-04-20T13:22:00.000Z">
+<meta property="article:modified_time" content="2025-04-20T13:36:10.132Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="题解">
-<meta property="article:tag" content="模拟赛记录">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/h4ocw3d2.png">
   
     <link rel="alternate" href="/atom.xml" title="ACM训练日志" type="application/atom+xml">
   
@@ -190,7 +193,7 @@ mjx-container[display="true"] + br {
         <section id="main"><article id="post-高维前缀和" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/04/20/%E9%AB%98%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/" class="article-date">
-  <time class="dt-published" datetime="2025-04-20T08:00:00.000Z" itemprop="datePublished">2025-04-20</time>
+  <time class="dt-published" datetime="2025-04-20T13:22:00.000Z" itemprop="datePublished">2025-04-20</time>
 </a>
     
   </div>
@@ -201,7 +204,7 @@ mjx-container[display="true"] + br {
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      训练记录02：The 2024 ICPC Asia Hangzhou Regional Contest
+      高维前缀和
     </h1>
   
 
@@ -209,16 +212,27 @@ mjx-container[display="true"] + br {
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <p>求这样一个算式</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>g</mi><mo stretchy="false">[</mo><mi>S</mi><mo stretchy="false">]</mo><mo>=</mo><munder><mo>∑</mo><mrow><mi>T</mi><mo>⊆</mo><mi>S</mi></mrow></munder><mi>f</mi><mo stretchy="false">[</mo><mi>T</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">g[S]=\sum_{T\subseteq S} f[T]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.43952em;vertical-align:-1.389515em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8556639999999998em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span><span class="mrel mtight">⊆</span><span class="mord mathnormal mtight" style="margin-right:0.05764em;">S</span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.389515em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mclose">]</span></span></span></span></span></p>
+<p>首先我们来看二维度前缀和，可以写成这样：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;++j)</span><br><span class="line">        	sum[i][j]+=sum[i][j<span class="number">-1</span>];<span class="comment">//每一行先分别求个前缀和</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;++j)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">        	sum[i][j]+=sum[i<span class="number">-1</span>][j];<span class="comment">//每一列再求个前缀和</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>在两个维度分别做，实现了二维的前缀和。</p>
+<p>类似的，二进制下的高维前缀和可以写成</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> S=<span class="number">0</span>;S&lt;(<span class="number">1</span>&lt;&lt;n);++S)</span><br><span class="line">        <span class="keyword">if</span>(S&gt;&gt;i&amp;<span class="number">1</span>)f[S]+=f[S^(<span class="number">1</span>&lt;&lt;i)];</span><br></pre></td></tr></table></figure>
+<p><strong>例题：</strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5495">P5495 【模板】Dirichlet 前缀和 - 洛谷</a></p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/h4ocw3d2.png" alt=""></p>
+<p>质因数分解后变成了高维前缀和问题，每个质因子是一个维度。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=cnt;++i)</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j*pr[i]&lt;=n;++j)</span><br><span class="line">		a[pr[i]*j]+=a[j];</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/04/20/%E9%AB%98%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/" data-id="cm9po473f0000m8q6f7ss4nft" data-title="训练记录02：The 2024 ICPC Asia Hangzhou Regional Contest" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/04/20/%E9%AB%98%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/" data-id="cm9po473f0000m8q6f7ss4nft" data-title="高维前缀和" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E8%AE%B0%E5%BD%95/" rel="tag">模拟赛记录</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
 
     </footer>
   </div>
@@ -226,19 +240,10 @@ mjx-container[display="true"] + br {
     
 <nav id="article-nav">
   
-    <a href="/2025/04/20/%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%9502%EF%BC%9AThe-2024-ICPC-Asia-Hangzhou-Regional-Contest/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          训练记录02：The 2024 ICPC Asia Hangzhou Regional Contest
-        
-      </div>
-    </a>
   
-  
-    <a href="/2025/04/15/%E8%83%8C%E5%8C%85/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2025/04/20/%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%9502%EF%BC%9AThe-2024-ICPC-Asia-Hangzhou-Regional-Contest/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">背包进阶</div>
+      <div class="article-nav-title">训练记录02：The 2024 ICPC Asia Hangzhou Regional Contest</div>
     </a>
   
 </nav>
@@ -268,7 +273,7 @@ mjx-container[display="true"] + br {
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E8%AE%B0%E5%BD%95/" style="font-size: 15px;">模拟赛记录</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E9%A2%98%E8%A7%A3/" style="font-size: 20px;">题解</a>
+      <a href="/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">模拟赛记录</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">笔记</a> <a href="/tags/%E9%A2%98%E8%A7%A3/" style="font-size: 20px;">题解</a>
     </div>
   </div>
 
@@ -290,11 +295,11 @@ mjx-container[display="true"] + br {
       <ul>
         
           <li>
-            <a href="/2025/04/20/%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%9502%EF%BC%9AThe-2024-ICPC-Asia-Hangzhou-Regional-Contest/">训练记录02：The 2024 ICPC Asia Hangzhou Regional Contest</a>
+            <a href="/2025/04/20/%E9%AB%98%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/">高维前缀和</a>
           </li>
         
           <li>
-            <a href="/2025/04/20/%E9%AB%98%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/">训练记录02：The 2024 ICPC Asia Hangzhou Regional Contest</a>
+            <a href="/2025/04/20/%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%9502%EF%BC%9AThe-2024-ICPC-Asia-Hangzhou-Regional-Contest/">训练记录02：The 2024 ICPC Asia Hangzhou Regional Contest</a>
           </li>
         
           <li>
