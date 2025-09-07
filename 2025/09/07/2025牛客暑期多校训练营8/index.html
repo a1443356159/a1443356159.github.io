@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>ACM训练日志</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="2025牛客暑期多校训练营8 B. 逆序对奇偶性 总结两个性质即可。  性质1：交换排列中两个数，逆序对数的奇偶性发生变化。 性质2：区间 [l,r] 中的数轮换 d 位，奇偶变化只和区间长度 len 和 d 的奇偶性有关。  F. 破旧的 LED 灯管 法I：搜索剪枝 暴力做法：枚举灯管的 \(2^{7m}\) 中可能，再来判断是否可行。 值得注意的是，这 \(2^{7m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACM训练日志">
+<meta property="og:url" content="http://example.com/2025/09/07/2025%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A58/index.html">
+<meta property="og:site_name" content="ACM训练日志">
+<meta property="og:description" content="2025牛客暑期多校训练营8 B. 逆序对奇偶性 总结两个性质即可。  性质1：交换排列中两个数，逆序对数的奇偶性发生变化。 性质2：区间 [l,r] 中的数轮换 d 位，奇偶变化只和区间长度 len 和 d 的奇偶性有关。  F. 破旧的 LED 灯管 法I：搜索剪枝 暴力做法：枚举灯管的 \(2^{7m}\) 中可能，再来判断是否可行。 值得注意的是，这 \(2^{7m">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-09-07T14:44:16.728Z">
+<meta property="article:modified_time" content="2025-08-10T08:34:27.120Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="ACM训练日志" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ACM训练日志</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2025牛客暑期多校训练营8" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/09/07/2025%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A58/" class="article-date">
+  <time class="dt-published" datetime="2025-09-07T14:44:16.728Z" itemprop="datePublished">2025-09-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="牛客暑期多校训练营8">2025牛客暑期多校训练营8</h1>
+<h2 id="b.-逆序对奇偶性">B. 逆序对奇偶性</h2>
+<p>总结两个性质即可。</p>
+<blockquote>
+<p>性质1：交换排列中两个数，逆序对数的奇偶性发生变化。</p>
+<p>性质2：区间 [l,r] 中的数轮换 d 位，奇偶变化只和区间长度 len 和 d
+的奇偶性有关。</p>
+</blockquote>
+<h2 id="f.-破旧的-led-灯管">F. 破旧的 LED 灯管</h2>
+<p><strong>法I：搜索剪枝</strong></p>
+<p>暴力做法：枚举灯管的 <span class="math inline">\(2^{7m}\)</span>
+中可能，再来判断是否可行。</p>
+<p>值得注意的是，这 <span class="math inline">\(2^{7m}\)</span>
+可能中，许多状态一定是不优秀的。</p>
+<p>对于一位灯管的 <span class="math inline">\(2^7\)</span>
+中的两种可能的 <span class="math inline">\(A,B\)</span>，每种可能能够把
+<span class="math inline">\([0,2^7)\)</span>
+划分成一些等价类，即商集，记作 <span
+class="math inline">\(S_A,S_B\)</span>。</p>
+<ol type="1">
+<li><p>若商集一样，取灯管数最少的一种方案。</p></li>
+<li><p>若 <span class="math inline">\(cnt[A]\le
+cnt[B]\)</span>，并且任意 <span class="math inline">\([x]_A\)</span> 是
+<span class="math inline">\(S_B\)</span> 中的某个元素的子集，说明 <span
+class="math inline">\(A\)</span> 能够用更少的灯管将集合划分得更细，那么
+<span class="math inline">\(B\)</span> 就肯定不优秀了，<span
+class="math inline">\(B\)</span>
+就是一种冗余的划分方法。这样，每一位可能的灯管方案就只有 <span
+class="math inline">\(57\)</span> 种了。</p></li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//法I，搜索剪枝</span></span><br><span class="line"><span class="comment">//虽然每一位的灯管有2^7种可能，但是其中很多是不优秀的</span></span><br><span class="line"><span class="comment">//如果两种灯管划分的等价类相同，只需要选择灯管数最小的即可  </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">2e5</span><span class="number">+5</span>,P=<span class="number">998244353</span>,g=<span class="number">3</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(c&gt;<span class="string">&#x27;9&#x27;</span>||c&lt;<span class="string">&#x27;0&#x27;</span>) &#123;<span class="keyword">if</span>(c==<span class="string">&#x27;-&#x27;</span>)f=<span class="number">-1</span>;c=<span class="built_in">getchar</span>();&#125;</span><br><span class="line">	<span class="keyword">while</span>(c&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;c&lt;=<span class="string">&#x27;9&#x27;</span>) &#123;x=x*<span class="number">10</span>+c-<span class="string">&#x27;0&#x27;</span>;c=<span class="built_in">getchar</span>();&#125;</span><br><span class="line">	<span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> mp[<span class="number">10</span>],cnt2[<span class="number">1</span>&lt;&lt;<span class="number">7</span>];</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt;valid;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">prepare</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> id[<span class="number">1</span>&lt;&lt;<span class="number">7</span>],cnt;</span><br><span class="line">	map&lt;ll,pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;&gt;F;</span><br><span class="line">	mp[<span class="number">0</span>]=<span class="number">1</span><span class="number">+2</span><span class="number">+8</span><span class="number">+16</span><span class="number">+32</span><span class="number">+64</span>;</span><br><span class="line">	mp[<span class="number">1</span>]=<span class="number">8</span><span class="number">+64</span>;</span><br><span class="line">	mp[<span class="number">2</span>]=<span class="number">1</span><span class="number">+4</span><span class="number">+8</span><span class="number">+16</span><span class="number">+32</span>;</span><br><span class="line">	mp[<span class="number">3</span>]=<span class="number">1</span><span class="number">+4</span><span class="number">+8</span><span class="number">+32</span><span class="number">+64</span>;</span><br><span class="line">	mp[<span class="number">4</span>]=<span class="number">2</span><span class="number">+4</span><span class="number">+8</span><span class="number">+64</span>;</span><br><span class="line">	mp[<span class="number">5</span>]=<span class="number">1</span><span class="number">+2</span><span class="number">+4</span><span class="number">+32</span><span class="number">+64</span>;</span><br><span class="line">	mp[<span class="number">6</span>]=<span class="number">1</span><span class="number">+2</span><span class="number">+4</span><span class="number">+16</span><span class="number">+32</span><span class="number">+64</span>;</span><br><span class="line">	mp[<span class="number">7</span>]=<span class="number">1</span><span class="number">+8</span><span class="number">+64</span>;</span><br><span class="line">	mp[<span class="number">8</span>]=<span class="number">1</span><span class="number">+2</span><span class="number">+4</span><span class="number">+8</span><span class="number">+16</span><span class="number">+32</span><span class="number">+64</span>;</span><br><span class="line">	mp[<span class="number">9</span>]=<span class="number">1</span><span class="number">+2</span><span class="number">+4</span><span class="number">+8</span><span class="number">+32</span><span class="number">+64</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> S=(<span class="number">1</span>&lt;&lt;<span class="number">7</span>)<span class="number">-1</span>;S&gt;=<span class="number">0</span>;--S) &#123;</span><br><span class="line">		<span class="type">int</span> y=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">7</span>;++i)</span><br><span class="line">			<span class="keyword">if</span>(S&gt;&gt;i&amp;<span class="number">1</span>)</span><br><span class="line">				++y;</span><br><span class="line">		cnt2[S]=y;</span><br><span class="line">		<span class="built_in">memset</span>(id,<span class="number">0</span>,<span class="built_in">sizeof</span>(id));</span><br><span class="line">		cnt=<span class="number">0</span>;</span><br><span class="line">		ll to=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;++i) &#123;</span><br><span class="line">			<span class="type">int</span> x=mp[i]&amp;S;</span><br><span class="line">			<span class="keyword">if</span>(!id[x])id[x]=++cnt;</span><br><span class="line">			to=to*<span class="number">10</span>+id[x];</span><br><span class="line">		&#125;</span><br><span class="line">		pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;nw=<span class="built_in">make_pair</span>(y,S);</span><br><span class="line">		<span class="keyword">if</span>(F.<span class="built_in">find</span>(to)==F.<span class="built_in">end</span>()||nw&lt;F[to])F[to]=nw;</span><br><span class="line">	&#125;</span><br><span class="line">	ll pw[]=&#123;<span class="number">1</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">1000</span>,<span class="number">10000</span>,<span class="number">100000</span>,<span class="number">1000000</span>,<span class="number">10000000</span>,<span class="number">100000000</span>,<span class="number">1000000000</span>&#125;;</span><br><span class="line">			</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> it=F.<span class="built_in">begin</span>();it!=F.<span class="built_in">end</span>();++it) &#123;</span><br><span class="line">		<span class="type">int</span> flag=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">auto</span> it2=F.<span class="built_in">begin</span>();it2!=F.<span class="built_in">end</span>();++it2)</span><br><span class="line">			<span class="keyword">if</span>(it2-&gt;second.second!=it-&gt;second.second&amp;&amp;it2-&gt;second.first&lt;=it-&gt;second.first) &#123;</span><br><span class="line">				<span class="type">int</span> tag=<span class="number">1</span>;</span><br><span class="line">				ll x=it-&gt;first,y=it2-&gt;first;</span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> l=<span class="number">0</span>;l&lt;<span class="number">10</span>;++l)</span><br><span class="line">					<span class="keyword">for</span>(<span class="type">int</span> r=<span class="number">0</span>;r&lt;<span class="number">10</span>;++r)</span><br><span class="line">						<span class="keyword">if</span>(x/pw[l]%<span class="number">10</span>!=x/pw[r]%<span class="number">10</span>&amp;&amp;y/pw[l]%<span class="number">10</span>==y/pw[r]%<span class="number">10</span>)tag=<span class="number">0</span>;</span><br><span class="line">				<span class="keyword">if</span>(tag==<span class="number">1</span>) &#123;</span><br><span class="line">					flag=<span class="number">0</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		<span class="keyword">if</span>(flag)</span><br><span class="line">			valid.<span class="built_in">push_back</span>(it-&gt;second.second);</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">char</span> ber[<span class="number">105</span>][<span class="number">3</span>];</span><br><span class="line"><span class="type">int</span> mask[<span class="number">4</span>],ans,stk[<span class="number">200</span>],tp,n,m;</span><br><span class="line"><span class="type">bool</span> F[<span class="number">1</span>&lt;&lt;<span class="number">21</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> id,<span class="type">int</span> nwans)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(nwans&gt;=ans)<span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">if</span>(id==m<span class="number">+1</span>) &#123;</span><br><span class="line">		<span class="type">int</span> flag=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i) &#123;</span><br><span class="line">			<span class="type">int</span> x=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;m;++j)</span><br><span class="line">				x+=(mp[ber[i][j]-<span class="string">&#x27;0&#x27;</span>]&amp;mask[j<span class="number">+1</span>])&lt;&lt;(j*<span class="number">7</span>);</span><br><span class="line">			<span class="keyword">if</span>(F[x]) &#123;</span><br><span class="line">				flag=<span class="number">0</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			F[x]=<span class="number">1</span>;</span><br><span class="line">			stk[++tp]=x;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(flag==<span class="number">1</span>)ans=nwans;</span><br><span class="line">		<span class="keyword">while</span>(tp)F[stk[tp--]]=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> x:valid) &#123;</span><br><span class="line">		mask[id]=x;</span><br><span class="line">		<span class="built_in">dfs</span>(id<span class="number">+1</span>,nwans+cnt2[x]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">work</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	n=<span class="built_in">read</span>();m=<span class="built_in">read</span>();</span><br><span class="line">	ans=<span class="number">114</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,ber[i]);</span><br><span class="line">	<span class="built_in">dfs</span>(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">prepare</span>();</span><br><span class="line">	<span class="type">int</span> T=<span class="built_in">read</span>();</span><br><span class="line">	<span class="keyword">while</span>(T--)<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//0:1+2+8+16+32+64</span></span><br><span class="line"><span class="comment">//1:8+64</span></span><br><span class="line"><span class="comment">//2:1+4+8+16+32</span></span><br><span class="line"><span class="comment">//3:1+4+8+32+64</span></span><br><span class="line"><span class="comment">//4:2+4+8+64</span></span><br><span class="line"><span class="comment">//5:1+2+4+32+64</span></span><br><span class="line"><span class="comment">//6:1+2+4+16+32+64</span></span><br><span class="line"><span class="comment">//7:1+8+64</span></span><br><span class="line"><span class="comment">//8:1+2+4+8+16+32+64</span></span><br><span class="line"><span class="comment">//9:1+2+4+8+32+64</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>法II：利用bitset优化可行性的AND卷积 （trick）</strong></p>
+<p>枚举两个楼层 <span class="math inline">\(i,j\)</span>
+，所选的灯管要能区分这两个楼层。记这两个楼层状态相同的灯管集合为 <span
+class="math inline">\(S_{i,j}\)</span> ，那么最后的答案 <span
+class="math inline">\(ans\)</span> 不能是 <span
+class="math inline">\(S\)</span> 的子集。一共有 <span
+class="math inline">\(\frac{n(n-1)}{2}\)</span> 对这样的限制。</p>
+<p>设一个 <span class="math inline">\(F\)</span> 数组，令 <span
+class="math inline">\(F[S_{i,j}]=1\)</span>，再对 <span
+class="math inline">\(F\)</span>
+做一个后缀和就知道哪些灯管状态不可行了。</p>
+<p>直接做后缀和的复杂度为 <span
+class="math inline">\(O(T\times7m2^{7m})\)</span> 过不去。</p>
+<p>用 <span class="math inline">\(biset\)</span> 优化！！</p>
+<p>做第 <span class="math inline">\(i\)</span> 的的后缀和时候，将第
+<span class="math inline">\(i\)</span> 位为 <span
+class="math inline">\(1\)</span> 的取出来，右移 <span
+class="math inline">\(2^i\)</span> 位后或上 <span
+class="math inline">\(F\)</span>
+即可。思考一下后缀和的过程，会发现这么做是对的。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//法I，搜索剪枝</span></span><br><span class="line"><span class="comment">//虽然每一位的灯管有2^7种可能，但是其中很多是不优秀的</span></span><br><span class="line"><span class="comment">//如果两种灯管划分的等价类相同，只需要选择灯管数最小的即可  </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">2e5</span><span class="number">+5</span>,P=<span class="number">998244353</span>,g=<span class="number">3</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(c&gt;<span class="string">&#x27;9&#x27;</span>||c&lt;<span class="string">&#x27;0&#x27;</span>) &#123;<span class="keyword">if</span>(c==<span class="string">&#x27;-&#x27;</span>)f=<span class="number">-1</span>;c=<span class="built_in">getchar</span>();&#125;</span><br><span class="line">	<span class="keyword">while</span>(c&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;c&lt;=<span class="string">&#x27;9&#x27;</span>) &#123;x=x*<span class="number">10</span>+c-<span class="string">&#x27;0&#x27;</span>;c=<span class="built_in">getchar</span>();&#125;</span><br><span class="line">	<span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> mp[<span class="number">10</span>];</span><br><span class="line"><span class="type">int</span> ans,n,m,A[<span class="number">105</span>];</span><br><span class="line">bitset&lt;1&lt;&lt;21&gt;F,mask[<span class="number">21</span>],tmp;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">prepare</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> id[<span class="number">1</span>&lt;&lt;<span class="number">7</span>],cnt;</span><br><span class="line">	mp[<span class="number">0</span>]=<span class="number">1</span><span class="number">+2</span><span class="number">+8</span><span class="number">+16</span><span class="number">+32</span><span class="number">+64</span>;</span><br><span class="line">	mp[<span class="number">1</span>]=<span class="number">8</span><span class="number">+64</span>;</span><br><span class="line">	mp[<span class="number">2</span>]=<span class="number">1</span><span class="number">+4</span><span class="number">+8</span><span class="number">+16</span><span class="number">+32</span>;</span><br><span class="line">	mp[<span class="number">3</span>]=<span class="number">1</span><span class="number">+4</span><span class="number">+8</span><span class="number">+32</span><span class="number">+64</span>;</span><br><span class="line">	mp[<span class="number">4</span>]=<span class="number">2</span><span class="number">+4</span><span class="number">+8</span><span class="number">+64</span>;</span><br><span class="line">	mp[<span class="number">5</span>]=<span class="number">1</span><span class="number">+2</span><span class="number">+4</span><span class="number">+32</span><span class="number">+64</span>;</span><br><span class="line">	mp[<span class="number">6</span>]=<span class="number">1</span><span class="number">+2</span><span class="number">+4</span><span class="number">+16</span><span class="number">+32</span><span class="number">+64</span>;</span><br><span class="line">	mp[<span class="number">7</span>]=<span class="number">1</span><span class="number">+8</span><span class="number">+64</span>;</span><br><span class="line">	mp[<span class="number">8</span>]=<span class="number">1</span><span class="number">+2</span><span class="number">+4</span><span class="number">+8</span><span class="number">+16</span><span class="number">+32</span><span class="number">+64</span>;</span><br><span class="line">	mp[<span class="number">9</span>]=<span class="number">1</span><span class="number">+2</span><span class="number">+4</span><span class="number">+8</span><span class="number">+32</span><span class="number">+64</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;<span class="number">21</span>;++k)</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;(<span class="number">1</span>&lt;&lt;<span class="number">21</span>);++i)</span><br><span class="line">			<span class="keyword">if</span>(i&gt;&gt;k&amp;<span class="number">1</span>)mask[k][i]=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">work</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	n=<span class="built_in">read</span>();m=<span class="built_in">read</span>();</span><br><span class="line">	<span class="type">char</span> ber[<span class="number">3</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,ber);</span><br><span class="line">		A[i]=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;m;++j)</span><br><span class="line">			A[i]+=mp[ber[j]-<span class="string">&#x27;0&#x27;</span>]&lt;&lt;(<span class="number">7</span>*j);</span><br><span class="line">	&#125;</span><br><span class="line">	F.<span class="built_in">reset</span>();</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> b=<span class="number">7</span>*m,all=(<span class="number">1</span>&lt;&lt;b)<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=i<span class="number">+1</span>;j&lt;=n;++j) &#123;</span><br><span class="line">			<span class="type">int</span> x=(A[i]^A[j])^all;</span><br><span class="line">			F[x]=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">   	<span class="comment">//bitset优化后缀和</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;<span class="number">7</span>*m;++k) &#123;</span><br><span class="line">		tmp=F&amp;mask[k];</span><br><span class="line">		tmp&gt;&gt;=(<span class="number">1</span>&lt;&lt;k);</span><br><span class="line">		F=F|tmp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> ans=b;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> S=<span class="number">0</span>;S&lt;=all;++S)</span><br><span class="line">		<span class="keyword">if</span>(!F[S])</span><br><span class="line">			ans=<span class="built_in">min</span>(ans,__builtin_popcount(S));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">prepare</span>();</span><br><span class="line">	<span class="type">int</span> T=<span class="built_in">read</span>();</span><br><span class="line">	<span class="keyword">while</span>(T--)<span class="built_in">work</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>法III：把测试点和在一起做一次后缀和</strong></p>
+<p><span class="math inline">\(F[S]\)</span> 在二进制下有 <span
+class="math inline">\(T\)</span> 位，第 <span
+class="math inline">\(i\)</span> 位维护第 <span
+class="math inline">\(i\)</span> 个测试点的答案。 这里 <span
+class="math inline">\(T\le 100\)</span>，可以拿__int128状态压缩。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/09/07/2025%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A58/" data-id="cmf9t4kkh0002wwq6d2e4d7ur" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/09/07/%E6%AF%94%E8%B5%9B%E8%AE%B0%E5%BD%9501%EF%BC%9ACCPC%E7%BD%91%E7%BB%9C%E8%B5%9B%E7%AC%AC%E4%B8%80%E5%9C%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CCPC网络赛第一场</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E7%BA%B2/" rel="tag">大纲</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E8%AE%B0%E5%BD%95/" rel="tag">模拟赛记录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%94%E8%B5%9B/" rel="tag">比赛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E5%A4%A7%E7%BA%B2/" style="font-size: 10px;">大纲</a> <a href="/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E8%AE%B0%E5%BD%95/" style="font-size: 16.67px;">模拟赛记录</a> <a href="/tags/%E6%AF%94%E8%B5%9B/" style="font-size: 10px;">比赛</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 13.33px;">笔记</a> <a href="/tags/%E9%A2%98%E8%A7%A3/" style="font-size: 20px;">题解</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/08/">August 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">June 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">February 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/09/07/2025%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A58/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2025/09/07/%E6%AF%94%E8%B5%9B%E8%AE%B0%E5%BD%9501%EF%BC%9ACCPC%E7%BD%91%E7%BB%9C%E8%B5%9B%E7%AC%AC%E4%B8%80%E5%9C%BA/">CCPC网络赛第一场</a>
+          </li>
+        
+          <li>
+            <a href="/2025/08/18/2025%E6%9D%AD%E7%94%B5%E5%A4%9A%E6%A0%A110/">杭电多校第十场</a>
+          </li>
+        
+          <li>
+            <a href="/2025/08/12/2025%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A59/">2025暑期牛客多校第九场</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/15/2025%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A51/">牛客第一场</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
