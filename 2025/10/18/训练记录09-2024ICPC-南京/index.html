@@ -13,12 +13,14 @@
 <meta property="og:site_name" content="ACM训练日志">
 <meta property="og:description" content="B.Birthday Gift 【题意】 给出一个长为 n≤2×105n \le  2\times 10^5n≤2×105 的仅由 0,1,20,1,20,1,2 组成的字符串。一次操作可以将一个 222 改为 000 或 111，也可以一次操作将两个相邻的 000 或 111 消掉。问最后剩下的长度最小是多少。 【题解】 值得注意的是，不能 dp 前 i 个字符结尾为 0&#x2F;10&#x2F;10&#x2F;1 的最">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/8w5chxl1.png">
 <meta property="article:published_time" content="2025-10-18T01:00:00.000Z">
-<meta property="article:modified_time" content="2025-10-27T03:21:00.234Z">
+<meta property="article:modified_time" content="2025-10-27T03:29:33.828Z">
 <meta property="article:author" content="过去软糯的我已经死了">
 <meta property="article:tag" content="题解">
 <meta property="article:tag" content="模拟赛记录">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/8w5chxl1.png">
   
     <link rel="alternate" href="/atom.xml" title="ACM训练日志" type="application/atom+xml">
   
@@ -237,7 +239,7 @@ mjx-container[display="true"] + br {
 <p><strong>【解法2】</strong></p>
 <p>官方题解给的递推式子没有怎么看懂。参考了官方题解，自己有一个不错的思路。</p>
 <p>确定拓扑序的过程一定要是从前往后这，这也是我们dp的顺序，只有这样才能最大化利用dp的状态。</p>
-<p>&lt; img src="<a target="_blank" rel="noopener" href="https://cdn.luogu.com.cn/upload/image_hosting/8w5chxl1.png">https://cdn.luogu.com.cn/upload/image_hosting/8w5chxl1.png</a>" style = "zoom:50%;" / &gt;</p>
+<img src="https://cdn.luogu.com.cn/upload/image_hosting/8w5chxl1.png" style="zoom:80%;">
 <p>当 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">dp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">p</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">u</span></span></span></span> 的时候，我们需要知道哪些信息呢？</p>
 <ul>
 <li>需要知道 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">u</span></span></span></span> 在拓扑序中的位置，假设为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span>。</li>
